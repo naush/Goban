@@ -6,19 +6,14 @@
       .board {
         width: 600px;
         height: 600px;
-        background: brown;
+        background: yellow;
         display: grid;
         grid-template-columns: repeat(19, 1fr);
         grid-template-rows: repeat(19, 1fr);
+        border: 0.5px solid brown;
       }
       .cell {
-        border-radius: 50%;
-      }
-      .black {
-        background: black;
-      }
-      .white {
-        background: white;
+        border: 0.5px solid brown;
       }
     </style>
     <script>
@@ -27,16 +22,14 @@
         const addCell = (board, klass) => {
           const cell = document.createElement('div');
           cell.classList.add('cell');
-          cell.classList.add(klass);
           board.appendChild(cell);
         };
-        Array(19 * 19).fill().map((_item, index)=>{
-          if (index % 2 === 0) {
-            addCell(board, 'black');
-          } else {
-            addCell(board, 'white');
-          }
+        Array(19 * 19).fill().map(()=>{
+          addCell(board);
         })
+        const move = document.createElement('div');
+        move.classList.add('move');
+        board.appendChild(move);
       });
     </script>
   </head>
