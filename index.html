@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Go Board</title>
+    <style>
+      .board {
+        width: 600px;
+        height: 600px;
+        background: brown;
+        display: grid;
+        grid-template-columns: repeat(19, 1fr);
+        grid-template-rows: repeat(19, 1fr);
+      }
+      .cell {
+        border-radius: 50%;
+      }
+      .black {
+        background: black;
+      }
+      .white {
+        background: white;
+      }
+    </style>
+    <script>
+      window.addEventListener('load', () => {
+        const board = document.querySelector('.board');
+        const addCell = (board, klass) => {
+          const cell = document.createElement('div');
+          cell.classList.add('cell');
+          cell.classList.add(klass);
+          board.appendChild(cell);
+        };
+        Array(19 * 19).fill().map((_item, index)=>{
+          if (index % 2 === 0) {
+            addCell(board, 'black');
+          } else {
+            addCell(board, 'white');
+          }
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <div class='board'>
+    </div>
+  </body>
+</html>
