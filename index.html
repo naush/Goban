@@ -6,7 +6,7 @@
       .table {
         width: 720px;
         height: 720px;
-        padding: calc(100% / 72);
+        padding: calc(720px / 40);
         background-color: #F1B06C;
       }
       .board {
@@ -15,8 +15,8 @@
         display: grid;
         grid-template-columns: repeat(36, 1fr);
         grid-template-rows: repeat(36, 1fr);
-        border-bottom: 0.1px solid grey;
-        border-right: 0.1px solid grey;
+        border-right: 1px solid grey;
+        border-bottom: 1px solid grey;
         background-size: calc(100% / 18) calc(100% / 18);
         background-image:
           linear-gradient(to right, grey 1px, transparent 1px),
