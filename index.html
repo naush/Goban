@@ -22,9 +22,19 @@
           linear-gradient(to right, grey 1px, transparent 1px),
           linear-gradient(to bottom, grey 1px, transparent 1px);
       }
+      .star {
+        width: calc(100% / 4);
+        height: calc(100% / 4);
+        border-radius: 50%;
+        background-color: grey;
+        align-self: center;
+        justify-self: center;
+        z-index: 1;
+      }
       .stone {
         border-radius: 50%;
         box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25), -2px -2px 4px 0 rgba(255, 255, 255, 0.25);
+        z-index: 2;
       }
       .black {
         background: linear-gradient(145deg, #F6CFA6, #000000);
@@ -36,6 +46,17 @@
     <script>
       window.addEventListener('load', () => {
         const board = document.querySelector('.board');
+
+        const placeStar = (column, row) => {
+          const star = document.createElement('div');
+          star.style.gridColumnStart = (column - 1) * 2;
+          star.style.gridColumnEnd = (column - 1) * 2 + 2;
+          star.style.gridRowStart = (row - 1) * 2;
+          star.style.gridRowEnd = (row - 1) * 2 + 2;
+          star.classList.add('star');
+          board.appendChild(star);
+        }
+
         const placeStone = (column, row, mark) => {
           const stone = document.createElement('div');
           stone.style.gridColumnStart = (column - 1) * 2;
@@ -46,6 +67,17 @@
           stone.classList.add(mark);
           board.appendChild(stone);
         }
+
+        placeStar(4, 4);
+        placeStar(4, 10);
+        placeStar(4, 16);
+        placeStar(10, 4);
+        placeStar(10, 10);
+        placeStar(10, 16);
+        placeStar(16, 4);
+        placeStar(16, 10);
+        placeStar(16, 16);
+
         placeStone(4, 4, 'black');
         placeStone(4, 10, 'black');
         placeStone(4, 16, 'black');
