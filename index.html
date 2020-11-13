@@ -8,11 +8,11 @@
         height: 600px;
         background-color: #F1B06C;
         display: grid;
-        grid-template-columns: repeat(38, 1fr);
-        grid-template-rows: repeat(38, 1fr);
-        background-size: calc(100% / 19) calc(100% / 19);
+        grid-template-columns: repeat(36, 1fr);
+        grid-template-rows: repeat(36, 1fr);
         border-bottom: 1px solid grey;
         border-right: 1px solid grey;
+        background-size: calc(100% / 18) calc(100% / 18);
         background-image:
           linear-gradient(to right, grey 1px, transparent 1px),
           linear-gradient(to bottom, grey 1px, transparent 1px);
@@ -42,7 +42,9 @@
           board.appendChild(stone);
         }
         placeStone(4, 4, 'black');
-        placeStone(17, 17, 'white');
+        placeStone(4, 10, 'black');
+        placeStone(4, 16, 'black');
+        placeStone(16, 16, 'white');
       });
     </script>
   </head>
