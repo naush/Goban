@@ -48,16 +48,6 @@
       window.addEventListener('load', () => {
         const board = document.querySelector('.board');
 
-        const placeStar = (column, row) => {
-          const star = document.createElement('div');
-          star.style.gridColumnStart = (column - 1) * 2;
-          star.style.gridColumnEnd = (column - 1) * 2 + 2;
-          star.style.gridRowStart = (row - 1) * 2;
-          star.style.gridRowEnd = (row - 1) * 2 + 2;
-          star.classList.add('star');
-          board.appendChild(star);
-        }
-
         const placeStone = (column, row, mark) => {
           const stone = document.createElement('div');
           stone.style.gridColumnStart = (column - 1) * 2;
@@ -68,16 +58,6 @@
           stone.classList.add(mark);
           board.appendChild(stone);
         }
-
-        placeStar(4, 4);
-        placeStar(4, 10);
-        placeStar(4, 16);
-        placeStar(10, 4);
-        placeStar(10, 10);
-        placeStar(10, 16);
-        placeStar(16, 4);
-        placeStar(16, 10);
-        placeStar(16, 16);
 
         placeStone(4, 4, 'black');
         placeStone(4, 10, 'black');
@@ -90,7 +70,17 @@
   </head>
   <body>
     <div class='table'>
-      <div class='board' />
+      <div class='board'>
+        <div class='star' style='grid-column-start: 6; grid-column-end: 8; grid-row-start: 6; grid-row-end: 8;'></div>
+        <div class='star' style='grid-column-start: 6; grid-column-end: 8; grid-row-start: 18; grid-row-end: 20;'></div>
+        <div class='star' style='grid-column-start: 6; grid-column-end: 8; grid-row-start: 30; grid-row-end: 32;'></div>
+        <div class='star' style='grid-column-start: 18; grid-column-end: 20; grid-row-start: 6; grid-row-end: 8;'></div>
+        <div class='star' style='grid-column-start: 18; grid-column-end: 20; grid-row-start: 18; grid-row-end: 20;'></div>
+        <div class='star' style='grid-column-start: 18; grid-column-end: 20; grid-row-start: 30; grid-row-end: 32;'></div>
+        <div class='star' style='grid-column-start: 30; grid-column-end: 32; grid-row-start: 6; grid-row-end: 8;'></div>
+        <div class='star' style='grid-column-start: 30; grid-column-end: 32; grid-row-start: 18; grid-row-end: 20;'></div>
+        <div class='star' style='grid-column-start: 30; grid-column-end: 32; grid-row-start: 30; grid-row-end: 32;'></div>
+      </div>
     </div>
   </body>
 </html>
